@@ -11,18 +11,3 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   hostPath:
     path: /data/mongo-0
-
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: mongo-data-pv-1
-spec:
-  capacity:
-    storage: 512Mi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
-  hostPath:
-    path: /data/mongo-1
