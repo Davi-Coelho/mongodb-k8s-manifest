@@ -1,13 +1,12 @@
 apiVersion: v1
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 metadata:
-  name: mongo-data-pv-0
+  name: mongo-data
+  namespace: default
 spec:
-  capacity:
-    storage: 512Mi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
-  hostPath:
-    path: /data/mongo-0
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 5Gi
